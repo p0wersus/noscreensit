@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NoScreensIT</title>
+    <link rel="icon" type="image/x-icon" href="../imagenes/logo2.ico">
+    <link rel="stylesheet" href="../estilo.css">
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+    }
+    #contenedor{
+        margin: 10px auto;
+        width: 540px;
+        height: 115px;
+    }
+    .reloj{
+        float: left;
+        font-size: 80px;
+        font-family: Courier,sans-serif;
+        color: #363431;
+    }
+    .boton{
+        outline: none;
+        border: 1px solid #363431;
+        color: white;
+        width: 128px;
+        height: 30px;
+        text-shadow: 0px -1px 1px black;
+        font-size: 20px;
+        border-radius: 5px;
+        font-family: Helvetica;
+        cursor: pointer;
+        background-image: linear-gradient(#3aad02,#1EFF00);
+    }
+    .boton:active{
+        background-image: linear-gradient(#3aad02,#1EFF00);
+    }
+    .boton:hover{
+        box-shadow: 0px 0px 14px #1EFF00;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        var centesimas = 0;
+var segundos = 0;
+var minutos = 0;
+var horas = 0;
+function inicio () {
+	control = setInterval(cronometro,10);
+	document.getElementById("inicio").disabled = true;
+	document.getElementById("parar").disabled = false;
+	document.getElementById("continuar").disabled = true;
+	document.getElementById("reinicio").disabled = false;
+}
+function parar () {
+	clearInterval(control);
+	document.getElementById("parar").disabled = true;
+	document.getElementById("continuar").disabled = false;
+}
+function reinicio () {
+	clearInterval(control);
+	centesimas = 0;
+	segundos = 0;
+	minutos = 0;
+	horas = 0;
+	Centesimas.innerHTML = ":00";
+	Segundos.innerHTML = ":00";
+	Minutos.innerHTML = ":00";
+	Horas.innerHTML = "00";
+	document.getElementById("inicio").disabled = false;
+	document.getElementById("parar").disabled = true;
+	document.getElementById("continuar").disabled = true;
+	document.getElementById("reinicio").disabled = true;
+}
+function cronometro () {
+	if (centesimas < 99) {
+		centesimas++;
+		if (centesimas < 10) { centesimas = "0"+centesimas }
+		Centesimas.innerHTML = ":"+centesimas;
+	}
+	if (centesimas == 99) {
+		centesimas = -1;
+	}
+	if (centesimas == 0) {
+		segundos ++;
+		if (segundos < 10) { segundos = "0"+segundos }
+		Segundos.innerHTML = ":"+segundos;
+	}
+	if (segundos == 59) {
+		segundos = -1;
+	}
+	if ( (centesimas == 0)&&(segundos == 0) ) {
+		minutos++;
+		if (minutos < 10) { minutos = "0"+minutos }
+		Minutos.innerHTML = ":"+minutos;
+	}
+	if (minutos == 59) {
+		minutos = -1;
+	}
+	if ( (centesimas == 0)&&(segundos == 0)&&(minutos == 0) ) {
+		horas ++;
+		if (horas < 10) { horas = "0"+horas }
+		Horas.innerHTML = horas;
+	}
+}
+    </script>
+    <header class="fondo_header">
+        <a href="../index.html"><img class="img_logo" src="../imagenes/logo2.png" alt="logo_noscreensit"></a>
+            <ul class="lista_menu_nav">
+                <li class="opcion_menu_nav"><a href="../demo/demo.html">DEMO</a></li>
+                <li class="opcion_menu_nav"><a href="../reseñas/reseñas.html">RESEÑAS</a></li>
+                <li class="opcion_menu_nav"><a href="../sobre_nosotros/nosotros.html">SOBRE NOSOTROS</a></li>
+                <li class="opcion_menu_nav"><a href="../historia/histoia.html">HISTORIA</a></li>
+                <li class="opcion_menu_nav"><a href="../inicio/inicio.html">INICIA SESIÓN</a></li>
+            </ul>
+    </header>
+
+    <main class="demo">
+        <div class="caja_demo">
+            <h1 class="titulo_principal">Coronometro de desconexión</h1>
+            <p class="demo_texto">
+                Aquí abajo, tiene usted un cronómetro, el cual calculará el tiempo que puede estar usted sin distracciónes, sea sincero y honesto y, pare el cronometro solo cuando mire el movil. Le daremos una opción saludable para dejar el movil, dpeendiendo de cuanto tiempo haya estado encendido el cronómetro.
+           
+            </p>
+        </div>
+        <br>
+        <br>
+        <div id="contenedor">
+            <div class="reloj" id="Horas">00</div>
+            <div class="reloj" id="Minutos">:00</div>
+            <div class="reloj" id="Segundos">:00</div>
+            <div class="reloj" id="Centesimas">:00</div>
+            <input type="button" class="boton" id="inicio" value="Inicia &#9658;" onclick="inicio();">
+            <input type="button" class="boton" id="parar" value="Para &#8718;" onclick="parar();" disabled>
+            <input type="button" class="boton" id="continuar" value="Continua &#8634;" onclick="inicio();" disabled>
+            <input type="button" class="boton" id="reinicio" value="Resetea &#8635;" onclick="reinicio();" disabled>
+        </div>
+        <br>
+        <br>
+    </main>
+    
+    <footer>
+        <p>NoScreensIT 2024&copy; Todos los derechos reservados.</a></p>
+    </footer>
+</body>
+</html>

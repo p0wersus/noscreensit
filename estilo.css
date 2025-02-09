@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-image: url(imagenes/image.jpg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+}
+/* header donde ir el logo */
+header {
+    background-color: #000000;
+}
+.img_logo {
+    width: 10.7%;
+    height: 10.7%;
+    float: left;
+}
+/* Lista del menu de arriba*/
+.lista_menu_nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    padding-left: 50px;
+    overflow: hidden;
+    background-color: #000000;
+}
+.opcion_menu_nav{
+    padding: 4%;
+    float: left;
+    padding-top: 3.8%;
+    padding-bottom: 3.8%;
+}
+.opcion_menu_nav a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+.opcion_menu_nav a:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+/* Pie de pagina */
+footer {
+    text-align: center;
+    padding: 1px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 20px;
+}
+main {
+    flex: 1;
+}
+.principal{
+    padding: 10px;
+}
+.caja_principal{
+    padding: 10px;
+    border: #000000;
+    background-color: #090909A8;
+}
+.titulo_principal{
+    color: white;
+    font-size: 50px;
+}
+.texto_principal{
+    font-size: 20px;
+}
+.img_principal{
+    float: right;
+    width: 35%;
+    height: 35%;
+}
+.demo{
+    padding-top: 10px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.caja_demo{
+    padding: 10px;
+    padding-left: 15%;
+    padding-right: 15%;
+    border: #000000;
+    background-color: #090909A8;
+}
+.demo_texto{
+    font-size: 20px;
+}
+.img_demo{
+    width: 35%;
+    height: 35%;
+    float: right;
+}
+.reseña {
+    background-color: rgba(255, 255, 255, 0.774);
+    border-radius: 8px;
+    box-shadow: 0 0 10px #0000001a;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.reseña h2 {
+    color: #333;
+}
+.reseña p {
+    color: #555;
+    line-height: 1.6;
+}
+.reseña .autor {
+    font-weight: bold;
+    color: #2767ac;
+}
+.img_contacto{
+    width: 45%;
+    height: 45%;
+    float: right;
+}
+.img_historia{
+    height: 35%;
+    width: 35%;
+    float: right;
+}
+.tituloInicioSesion {
+    text-align: center;
+    font-size: 50px;
+}
+.textoInicioSesion {
+    text-align: center;
+    font-size: 40px;
+    padding: 0;
+}
+.textoNuevaCuenta {
+    text-align: center;
+    font-size: 25px;
+    padding: 0;
+}
+#creacionCuenta {
+    text-decoration: none;
+    color: #BB0000;
+}
+#botonInicioSesion {
+    font-size: 20px;
+    width: 200px;
+    height: 30px;
+}
+#passwordConfirm, #password, #email {
+    font-size: 30px;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+.opcionCambioIdioma {
+    float:right;
+    padding-right: 4%;
+    padding-top: 3.8%;
+    padding-bottom: 3.8%;
+}
+.botonCambioIdioma {
+    background-color: #000000;
+}
